@@ -5,23 +5,23 @@ class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # Set window title
+
         self.setWindowTitle("Login")
 
-        # Create username label and input field
+        # Erstelle Benutzername Label und Input Feld
         self.username_label = QLabel("Benutzername:", self)
         self.username_input = QLineEdit(self)
 
-        # Create password label and input field
+        # Erstelle Passwort Label und Input Feld
         self.password_label = QLabel("Kennwort:", self)
         self.password_input = QLineEdit(self)
         self.password_input.setEchoMode(QLineEdit.Password)
 
-        # Create button to submit login
+        # Erstelle Button zum Login
         self.login_button = QPushButton("Anmelden", self)
         self.login_button.clicked.connect(self.check_login)
 
-        # Create grid layout and add widgets to it
+        # GridLayout Zuordnung
         self.grid_layout = QGridLayout()
         self.grid_layout.addWidget(self.username_label, 0, 0)
         self.grid_layout.addWidget(self.username_input, 0, 1)
@@ -29,36 +29,36 @@ class LoginWindow(QMainWindow):
         self.grid_layout.addWidget(self.password_input, 1, 1)
         self.grid_layout.addWidget(self.login_button, 2, 1)
 
-        # Create widget and set layout
+        # Widget erstellen und GridLayout setzen
         self.widget = QWidget()
         self.widget.setLayout(self.grid_layout)
 
-        # Set central widget
+        # CentralWidget setzen
         self.setCentralWidget(self.widget)
 
     def check_login(self):
-        # Define a list of valid usernames and passwords
+        # Liste von gültigen Benutzernamen und dazugehörige Passwörter
         valid_users = {
             "user1": "pass1",
             "user2": "pass2",
             "user3": "pass3"
         }
 
-        # Get entered username and password
+        # Eingegebenen Benutzernamen und Passwort abrufen
         username = self.username_input.text()
         password = self.password_input.text()
 
-        # Check if username is valid
+        # Prüfung ob Benutzername gültig ist
         if username in valid_users:
-            # Check if password is correct
+            # Prüfung ob Passwort gültig ist
             if password == valid_users[username]:
-                # Display success message in pop-up window
+                # PopUp Fenster das anzeigt dass Anmeldung erfolgreich war
                 QMessageBox.information(self, "Anmeldung erfolgreich", "Sie haben sich erfolgreich angemeldet.")
             else:
-                # Display error message in pop-up window
+                # PopUp Fenster das anzeigt dass Anmeldung fehlgeschlagen ist bzw. das Passwort falsch ist
                 QMessageBox.warning(self, "Anmeldung fehlgeschlagen", "Das eingegebene Kennwort ist falsch.")
         else:
-            # Display error message in pop-up window
+            # PopUp Fenster das anzeigt dass Anmeldung fehlgeschlagen ist bzw. der Benutzername unbekannt ist
             QMessageBox.warning(self, "Anmeldung fehlgeschlagen", "Der eingegebene Benutzername ist unbekannt.")
 
 if __name__ == "__main__":
