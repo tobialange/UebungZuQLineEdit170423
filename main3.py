@@ -8,6 +8,7 @@ class LoginWindow(QMainWindow):
 #Tipp: siehe Links in OneNote zur Übung!!
         # Set Placeholder Text anschauen!!!
         # Statt QMessagebox Label umschreiben
+        # Statt Dictionary - Listen verwenden
 
         self.setWindowTitle("Login")
 
