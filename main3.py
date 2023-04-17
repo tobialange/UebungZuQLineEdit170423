@@ -1,14 +1,14 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QMessageBox, QGridLayout, QWidget
 import sys
 
+#https://doc.qt.io/qtforpython/PySide6/QtWidgets/QLineEdit.html#PySide6.QtWidgets.PySide6.QtWidgets.QLineEdit.setInputMask
+#https://www.w3schools.com/python/python_strings_slicing.asp
+#https://www.w3schools.com/python/ref_string_rsplit.asp
+
 class LoginWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-#Tipp: siehe Links in OneNote zur Übung!!
-        # Set Placeholder Text anschauen!!!
-        # Statt QMessagebox Label umschreiben
-        # Statt Dictionary - Listen verwenden
 
         self.setWindowTitle("Login")
 
